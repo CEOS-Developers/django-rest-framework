@@ -57,5 +57,5 @@
     
 
 ## Tip
-https://www.django-rest-framework.org/api-guide/generic-views/
+https://www.django-rest-framework.org/api-guide/generic-views/ \
 https://www.django-rest-framework.org/api-guide/serializers/ 
