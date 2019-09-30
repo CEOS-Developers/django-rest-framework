@@ -5,9 +5,10 @@
 - [django 공식 도큐먼트](https://docs.djangoproject.com/ko/2.2/)와 [drf 공식 도큐먼트](https://www.django-rest-framework.org/)를 참조해서 주어진 api를 구현하시면 됩니다.
 
 ## 구현 스펙
-1. 모든 'Post'의 list를 가져오는 API
-    - url: `api/posts/`
-    - method: `GET`
+**1. 모든 'Post'의 list를 가져오는 API**
+- url: `api/posts/`
+- method: `GET`
+    
  
     결과 예시)
     ```
@@ -49,13 +50,14 @@
     ]
     ``` 
 
-2. 새로운 'Post'를 create 하도록 요청하는 API
+**2. 새로운 'Post'를 create 하도록 요청하는 API**
 - text 값을 담아 보내면 해당 값을 text field에 저장하고 있는 Post 생성
     - url: `api/posts/`
     - method: `POST`
     - body: `{"text": "새로운 post"}`
     
+    
 
 ## Tip
-https://www.django-rest-framework.org/api-guide/generic-views/
+https://www.django-rest-framework.org/api-guide/generic-views/ \
 https://www.django-rest-framework.org/api-guide/serializers/ 
