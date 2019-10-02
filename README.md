@@ -6,7 +6,7 @@
 
 ## 구현 스펙
 **1. 모든 'Post'의 list를 가져오는 API**
-- url: `api/posts/`
+- url: `api/v1/posts/`
 - method: `GET`
     
  
@@ -52,7 +52,7 @@
 
 **2. 새로운 'Post'를 create 하도록 요청하는 API**
 - text 값을 담아 보내면 해당 값을 text field에 저장하고 있는 Post 생성
-    - url: `api/posts/`
+    - url: `api/v1/posts/`
     - method: `POST`
     - body: `{"text": "새로운 post"}`
     
