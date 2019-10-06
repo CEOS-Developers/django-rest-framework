@@ -10,7 +10,7 @@ class PostTest(APITestCase):
         """
         retrieve list of all posts
         """
-        url = reverse('posts')
+        url = reverse('post-list')
         response = self.client.get(url)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
@@ -18,7 +18,7 @@ class PostTest(APITestCase):
         """
         create post
         """
-        url = reverse('posts')
+        url = reverse('post-list')
         data = {'text': 'test'}
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
@@ -30,7 +30,7 @@ class PostTest(APITestCase):
         update post
         """
         created = Post.objects.create(text='test')
-        url = reverse('post', kwargs={'pk': created.id})
+        url = reverse('post-detail', kwargs={'pk': created.id})
         data = {'text': 'test2'}
         response = self.client.put(url, data)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
@@ -42,7 +42,7 @@ class PostTest(APITestCase):
         delete post
         """
         created = Post.objects.create(text='test')
-        url = reverse('post', kwargs={'pk': created.id})
+        url = reverse('post-detail', kwargs={'pk': created.id})
         response = self.client.delete(url)
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
         self.assertEqual(Post.objects.count(), 0)
