@@ -1,10 +1,11 @@
 from django.urls import path
-from rest_framework.generics import ListCreateAPIView
+from rest_framework.urlpatterns import format_suffix_patterns
 
-from api import views
-from api.models import Post, Comment
-from api.serializers import PostSerializer
+from .views import PostsView, PostView
 
 urlpatterns = [
-    path('posts/', ListCreateAPIView.as_view(queryset=Post.objects.all(), serializer_class=PostSerializer), name='post-list')
+    path('posts/', PostsView.as_view(), name='posts'),
+    path('post/<int:pk>', PostView.as_view(), name='post'),
 ]
+
+urlpatterns = format_suffix_patterns(urlpatterns)
